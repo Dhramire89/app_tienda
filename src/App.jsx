@@ -8,6 +8,14 @@ import Tienda from "./Componentes/Tienda";
 import Error404 from "./Componentes/Error404";
 
 function App() {
+  const productos = [
+    { id: 1, nombre: "Producto 1" },
+    { id: 2, nombre: "Producto 2" },
+    { id: 3, nombre: "Producto 3" },
+    { id: 4, nombre: "Producto 4" },
+    { id: 5, nombre: "Producto 5" },
+  ];
+
   return (
     <Contenedor>
       <Menu>
@@ -19,7 +27,7 @@ function App() {
         <Route path="*" element={<Error404 />} />
         <Route path="/" element={<Inicio />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/tienda" element={<Tienda />} />
+        <Route path="/tienda" element={<Tienda productos={productos} />} />
       </Routes>
       <main>
         <aside>
